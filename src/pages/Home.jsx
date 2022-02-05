@@ -1,6 +1,15 @@
+import Navbar from '../component/Navbar';
+import Announcement from '../component/Announcement';
+import React from "react";
 
 const Home =()=>{
     return(
-        <div>Home</div>
-    )
+        <div>
+        <Announcement />
+        <Navbar />
+        </div>
+        
+    );
 }
+
+export default Home
