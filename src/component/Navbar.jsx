@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+
 
 const Container = styled.div`
-height: 60px ;
+height: 20px ;
 display:flex;
 justify-content:space-between;
 padding:15px 15px;
@@ -68,7 +70,7 @@ const Navbar = ()=>{
              <Login>LOGIN</Login>
             <Register>REGISTER</Register>
             <Badge badgeContent={4} color="primary">
-                 <MailIcon color="action" />
+                 <LocalGroceryStoreOutlinedIcon color="action" />
               </Badge>
          </ContentRight>
          </Right>
