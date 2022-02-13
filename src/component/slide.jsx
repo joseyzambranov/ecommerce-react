@@ -35,6 +35,7 @@ position:absolute;
 left:${props=>props.position === "left"&&"10px"};
 right:${props=>props.position === "right"&&"10px"};
 z-index:2;
+opacity:0.5;
 `
 const Slides = styled.div`
 width:100vw;
@@ -59,13 +60,16 @@ const Title = styled.h2`
 font-size:40px;
 `
 const Desc = styled.p`
-margin:30px 0;
+margin:50px 0;
 font-size:18px;
 font-weight:500;
 letter-spacing:3px;
+padding:5px;
+
 `
 const Button = styled.button`
 padding:10px;
+border:none;
 font-size:15px;
 cursor:pointer;
 background-color:#3590f3;
@@ -79,9 +83,9 @@ const Slide =()=>{
 
     const handleClick = (position)=>{
         if(position==="left"){
-            setSliderIndex(sliderIndex > 0? sliderIndex -1:3)
+            setSliderIndex(sliderIndex > 0? sliderIndex -1:2)
         }else{
-            setSliderIndex(sliderIndex < 3? sliderIndex +1:0)
+            setSliderIndex(sliderIndex < 2? sliderIndex +1:0)
         }
     }
  
