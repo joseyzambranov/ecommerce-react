@@ -83,9 +83,9 @@ const Slide =()=>{
 
     const handleClick = (position)=>{
         if(position==="left"){
-            setSliderIndex(sliderIndex > 0? sliderIndex -1:2)
+            setSliderIndex(sliderIndex > 0? sliderIndex -1:data.length-1)
         }else{
-            setSliderIndex(sliderIndex < 2? sliderIndex +1:0)
+            setSliderIndex(sliderIndex < data.length-1 ? sliderIndex +1:0)
         }
     }
  
