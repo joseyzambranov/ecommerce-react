@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {mobil1} from "../responsive"
 
 
 const Container = styled.div`
@@ -18,10 +19,11 @@ background-sie:cover;
 `
 
 const Wapper =styled.div`
-width:25%;
+width:30%;
 padding:20px;
 background-color:white;
 border-radius:20px;
+${mobil1({width:"75%"})}
 `
 
 const Title = styled.h1`

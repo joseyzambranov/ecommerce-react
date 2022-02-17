@@ -3,6 +3,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {data} from '../data';
 import { useState } from "react";
+import {mobil2} from "../responsive"
 
 const Container = styled.div`
 overflow:hidden;
@@ -10,6 +11,7 @@ width:100%;
 height:100vh;
 position:relative;
 display:flex;
+${mobil2({ display: "none" })}
 `
 
 const Wrapper = styled.div`
@@ -45,16 +47,19 @@ align-items:center;
 background-color:#${(props)=>props.bg};
 `
 const ImgContainer = styled.div`
-height:100%;
 flex:1;
+height:100%;
+
+
 `
 const Img = styled.img`
 height:90%;
 
+
 `
 const InfoContainer = styled.div`
 flex:1;
-padding:10px;
+padding:50px;
 `
 const Title = styled.h2`
 font-size:40px;
@@ -64,7 +69,7 @@ margin:50px 0;
 font-size:18px;
 font-weight:500;
 letter-spacing:3px;
-padding:5px;
+
 
 `
 const Button = styled.button`

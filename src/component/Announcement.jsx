@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {mobil} from "../responsive"
 
 const Container = styled.div`
 display:flex;
@@ -7,14 +8,14 @@ align-items:center;
 height:50px;
 background:#3590f3;
 color:white;
+font-size:14px;
+
 `
 const Announcement=()=>{
 
     return(
      <Container>
-    It was popularised in the 1960s with
-    the release of Letraset sheets containing
-    Lorem Ipsum p
+   Super Deal! Free Shipping on Orders Over $50
      </Container>
     );
 };

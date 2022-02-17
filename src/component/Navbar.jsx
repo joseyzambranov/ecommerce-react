@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
-import MailIcon from '@mui/icons-material/Mail';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
-
+import {mobil} from '../responsive'
 
 const Container = styled.div`
-height: 20px ;
+height: 30px ;
 display:flex;
 justify-content:space-between;
 padding:15px 15px;
+${mobil({ padding:"10px 0px"})}
 `
 const Left = styled.div`
 flex:1;
@@ -23,34 +23,45 @@ const Right = styled.div`
 flex:1;
 display:flex;
 justify-content:flex-end;
+${mobil({justifyContent:"center"})}
 
 `
 const Language = styled.div`
+${mobil({display:"none"})}
 `
 const ContentLeft = styled.div`
 
 display:flex;
 justify-content:flex-start;
 gap: 10px;
+${mobil({justifyContent:"center", gap:"5px"})}
 `
 const Input = styled.input`
-width:100px;
+width:40%;
+
 `
 const ContentRight=styled.div`
 display:flex;
 gap:10px;
-margin-right:20px;
+margin-right:10px;
+${mobil({marginRight:"5px",gap:"1px"})}
 `
 const Login = styled.div`
+font-size: 14px;
+${mobil({fontSize:"10px"})}
 `
 const Register = styled.div`
+font-size: 14px;
+${mobil({fontSize:"10px"})}
 `
 const Logo =styled.h1`
 display:flex;
 justify-content:center;
-font-size:24px;
-margin-top:-5px;
-text-aling:center;
+font-weight: bold;
+margin-top:-2%;
+text-align:center;
+font-size:18px;
+${mobil({fontSize:"12px",marginTop:"-3px" })}
 `
 const Navbar = ()=>{
     return(

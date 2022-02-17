@@ -22,10 +22,10 @@ z-index:3;
 
 const Container = styled.div`
 flex:1;
-min-width:280px;
+min-width:250px;
 height:350px;
 display:flex;
-margin:5px;
+margin:3px;
 align-items:center;
 justify-content:center;
 background-color:#f5fbfd;

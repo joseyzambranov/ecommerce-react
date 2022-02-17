@@ -3,6 +3,7 @@ import Navbar from "../component/Navbar";
 import Announcement from "../component/Announcement";
 import Products from "../component/Products";
 import Footer from "../component/Footer";
+import {mobil} from "../responsive"
 
 
 const Container = styled.div`
@@ -15,15 +16,18 @@ justify-content:space-between
 `
 const Filter = styled.div`
 margin:20px;
+${mobil({ width: "0px 20px", display: "flex", flexDirection: "column" })}
 `
 const FilterTitle = styled.span`
 font-size:20px;
 font-weight:600;
 margin-right:5px;
+${mobil({ marginRight: "0px" })}
 `
 const Select = styled.select`
 padding:10px;
 margin-right:20px;
+${mobil({ margin: "10px 0px" })}
 `
 const Option = styled.option`
 `

@@ -5,20 +5,26 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import {mobil} from "../responsive" 
+import {mobil1} from "../responsive" 
 
 const Container=styled.div`
 display:flex;
+${mobil({flexDirection:"column"})}
 `
 const Left=styled.div`
 flex:1;
 display flex;
 flex-direction:column;
 padding:20px;
+
 `
 
 const Center=styled.div`
 flex:1;
-padding:20px;
+padding:10px;
+${mobil({ display:"none"})}
+${mobil1({display:"none"})}
 `
 
 const Right=styled.div`
@@ -26,6 +32,7 @@ flex:1;
 padding:20px;
 `
 const Title=styled.h3`
+font-size:18px;
 `
 const Desc=styled.p`
 margin:20px 0px;
@@ -34,8 +41,8 @@ const Socialcontainer=styled.div`
 display:flex;
 `
 const Socialicon=styled.div`
-width:40px;
-height:40px;
+width:30px;
+height:30px;
 border-radius:50%;
 color:white;
 background-color:#${(props)=>props.color};
@@ -51,14 +58,18 @@ list-style:none;
 display:flex;
 flex-wrap:wrap;
 
+
 `
 const Listitems= styled.li`
 width:50%;
 padding-bottom:10px;
+
+
 `
 const Contactitems=styled.div`
 margin-bottom:20px;
 display:flex;
+font-size:14px;
 
 `
 const Payment=styled.img`
@@ -102,13 +113,13 @@ const Footer = ()=>{
             <Right>
                 <Title>Contact</Title>
                 <Contactitems>
-                <RoomIcon style={{marginRight:"5px"}} /> 622 Dixie Path , South Tobinchester 98336
+                <RoomIcon style={{marginRight:"2px"}} /> 622 Dixie Path , South Tobinchester 98336
                 </Contactitems>
                 <Contactitems>
-                <PhoneIcon style={{marginRight:"5px"}} /> +1 234 56 78
+                <PhoneIcon style={{marginRight:"2px"}} /> +1 234 56 78
                 </Contactitems>
                 <Contactitems>
-                <MailOutlineIcon style={{marginRight:"5px"}} /> contact@lama.dev
+                <MailOutlineIcon style={{marginRight:"2px"}} /> contact@lama.dev
                 </Contactitems>
                 <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
