@@ -3,6 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import {mobil} from '../responsive'
+import { useSelector} from 'react-redux';
+
 
 const Container = styled.div`
 height: 30px ;
@@ -64,6 +66,9 @@ font-size:18px;
 ${mobil({fontSize:"12px",marginTop:"-3px" })}
 `
 const Navbar = ()=>{
+    //const cart = useSelector(state=>state.cart)
+    const quantity = useSelector(state=>state.cart.quantity)
+    console.log(quantity)
     return(
      <Container>
          <Left>
