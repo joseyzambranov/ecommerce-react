@@ -4,6 +4,7 @@ import Badge from '@mui/material/Badge';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import {mobil} from '../responsive'
 import { useSelector} from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -48,14 +49,13 @@ gap:10px;
 margin-right:10px;
 ${mobil({marginRight:"5px",gap:"1px"})}
 `
-const Login = styled.div`
+const ContentItemRight = styled.div`
 font-size: 14px;
-${mobil({fontSize:"10px"})}
+${mobil({fontSize:"10px"})};
+cursor:pointer;
+
 `
-const Register = styled.div`
-font-size: 14px;
-${mobil({fontSize:"10px"})}
-`
+
 const Logo =styled.h1`
 display:flex;
 justify-content:center;
@@ -66,9 +66,9 @@ font-size:18px;
 ${mobil({fontSize:"12px",marginTop:"-3px" })}
 `
 const Navbar = ()=>{
-    //const cart = useSelector(state=>state.cart)
+    
     const quantity = useSelector(state=>state.cart.quantity)
-    console.log(quantity)
+    
     return(
      <Container>
          <Left>
@@ -83,11 +83,15 @@ const Navbar = ()=>{
              </Center>
          <Right>
              <ContentRight>
-             <Login>LOGIN</Login>
-            <Register>REGISTER</Register>
-            <Badge badgeContent={4} color="primary">
+             <ContentItemRight>LOGIN</ContentItemRight>
+            <ContentItemRight>REGISTER</ContentItemRight>
+            <Link to="/cart">
+            <ContentItemRight>
+            <Badge badgeContent={quantity} color="primary">
                  <LocalGroceryStoreOutlinedIcon color="action" />
-              </Badge>
+            </Badge>
+            </ContentItemRight>
+            </Link>
          </ContentRight>
          </Right>
      </Container>   

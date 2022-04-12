@@ -8,8 +8,9 @@ import AddIcon from '@mui/icons-material/Add';
 import {mobil1} from "../responsive"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { publicRequest } from "../requestMethods"
-
+import { publicRequest } from "../requestMethods";
+import {useDispatch} from "react-redux"
+import {addProduct} from "../redux/cartRedux"
 const Container =styled.div`
 
 `
@@ -108,7 +109,8 @@ const Product = ()=>{
     const [product,setProduct] = useState({})
     const [quantity,setQuantity] = useState(1)
     const [color,setColor] = useState("")
-    const [size,setSize] = useState("")
+    const [size,setSize] = useState("");
+    const dispatch = useDispatch();
 
     useEffect(()=>{
        const getProduct = async ()=>{
@@ -127,7 +129,8 @@ const Product = ()=>{
         )
     }
    const handleClick =()=>{
-       //update cart
+    dispatch(addProduct({...product,quantity,color,size}))
+    
        
    }
     return(
