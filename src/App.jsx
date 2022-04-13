@@ -4,6 +4,7 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
+import Success from './pages/Success';
 import { render } from "react-dom";
 import {
   BrowserRouter,
@@ -21,6 +22,7 @@ return (
             <Route path='/products/:category'element={<ProductList />}></Route>
             <Route path='/product/:id'element={<Product />}></Route>
             <Route path='/cart'element={<Cart />}></Route>
+            <Route path='/success'element={<Success />}></Route>
             <Route path='/login'element={user?<Navigate to="/"/>:<Login />}></Route>
             <Route path='/register'element={user?<Navigate to="/"/>:<Register />}></Route>
         </Routes>
