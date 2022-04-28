@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {data} from '../data';
 import { useState } from "react";
 import {mobil2} from "../responsive"
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
 overflow:hidden;
@@ -109,7 +110,10 @@ const Slide =()=>{
                         <InfoContainer>
                         <Title>{data.title}</Title>
                         <Desc>{data.desc}</Desc>
+                        <Link to="/products">
                         <Button>Buy now</Button>
+                        </Link>
+                        
                         </InfoContainer>
                         </Slides>
 

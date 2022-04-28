@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {useSelector} from "react-redux"
 import { useState } from "react";
 import { useEffect } from "react";
@@ -42,12 +42,17 @@ const Success = () => {
     >
     {orderId ? `Order has been created successfully. Your order number is ${orderId}`
              : `SuccessFull. Your order is being prepared...`}
+             <Link to="/">
+
              <button style={{
                  padding:10,
                  marginTop:20,
                  cursor:"pointer"
              }}>Go to Homepage 
              </button>
+             
+             </Link>
+            
     </div>
     )
     };

@@ -3,8 +3,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import {mobil} from '../responsive'
-import { useSelector} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logoutUser } from '../redux/apiCalls';
 
 
 const Container = styled.div`
@@ -70,9 +71,15 @@ font-size:18px;
 ${mobil({fontSize:"12px",marginTop:"-3px" })}
 `
 const Navbar = ()=>{
-    
+    const dispatch = useDispatch()
     const quantity = useSelector(state=>state.cart.quantity)
     const user = useSelector((state)=>state.user.currentUser)
+
+    const handleClick = (e)=>{
+        e.preventDefault()
+        logoutUser(dispatch)
+
+    }
     
     return(
      <Container>
@@ -92,9 +99,9 @@ const Navbar = ()=>{
          <Right>
              <ContentRight>
             {user?<>
-                <Link to="/login">
-            <ContentItemRight>LOGOUT</ContentItemRight>
-            </Link> 
+                
+            <ContentItemRight onClick={handleClick}>LOGOUT</ContentItemRight>
+             
             </>:<>
             <Link to="/login">
             <ContentItemRight>LOGIN</ContentItemRight>
