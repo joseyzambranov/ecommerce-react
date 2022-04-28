@@ -12,6 +12,10 @@ height: 30px ;
 display:flex;
 justify-content:space-between;
 padding:15px 15px;
+position:sticky;
+top:0;
+z-index:999;
+background:white;
 ${mobil({ padding:"10px 0px"})}
 `
 const Left = styled.div`
@@ -68,6 +72,7 @@ ${mobil({fontSize:"12px",marginTop:"-3px" })}
 const Navbar = ()=>{
     
     const quantity = useSelector(state=>state.cart.quantity)
+    const user = useSelector((state)=>state.user.currentUser)
     
     return(
      <Container>
@@ -79,12 +84,29 @@ const Navbar = ()=>{
             </ContentLeft>
          </Left>
              <Center>
+                 <Link  to="/">
                  <Logo>SUMER SHOP</Logo>
+                 </Link>
+                 
              </Center>
          <Right>
              <ContentRight>
-             <ContentItemRight>LOGIN</ContentItemRight>
-            <ContentItemRight>REGISTER</ContentItemRight>
+            {user?<>
+                <Link to="/login">
+            <ContentItemRight>LOGOUT</ContentItemRight>
+            </Link> 
+            </>:<>
+            <Link to="/login">
+            <ContentItemRight>LOGIN</ContentItemRight>
+            </Link> 
+             
+
+             <Link to="/register">
+            <ContentItemRight>REGISTER</ContentItemRight> 
+             </Link>
+            </>}
+            
+            
             <Link to="/cart">
             <ContentItemRight>
             <Badge badgeContent={quantity} color="primary">

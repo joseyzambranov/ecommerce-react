@@ -36,7 +36,8 @@ position:relative;
 }
 `
 const Img = styled.img`
-height:75%;
+height:230px;
+width:200px;
 z-index:2;
 `
 const Icon = styled.div`

@@ -21,8 +21,8 @@ const Products = ({cat,filters,sort})=>{
         const getProduct = async ()=>{
             try{
                 const res = await axios.get(
-                    cat ? `http://localhost:5000/api/product?category=${cat}`
-                        :"http://localhost:5000/api/product")
+                    cat ? `https://nodejs-ecommerce-api-mongodb.joseyzambranov.repl.co/api/product?category=${cat}`
+                        :"https://nodejs-ecommerce-api-mongodb.joseyzambranov.repl.co/api/product")
             setProduct(res.data)
             
             }catch(err){

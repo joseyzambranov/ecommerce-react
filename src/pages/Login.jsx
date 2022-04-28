@@ -1,4 +1,7 @@
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { login } from '../redux/apiCalls'
 import {mobil1} from "../responsive"
 
 
@@ -49,6 +52,10 @@ border:none;
 padding:15px 20px;
 color:white;
 background:#3590f3;
+&:disabled{
+    background:green;
+    cursor:not-allowed;
+}
 
 `
 const Link =styled.a`
@@ -57,16 +64,33 @@ font-size:12px;
 text-decoration:underline;
 cursor:pointer;
 `
+const Error = styled.span`
+color:red
+`
 
 const Login =()=>{
+    const [username,setUserName]= useState("");
+    const [password,setUserPassword]= useState("");
+    const dispatch = useDispatch();
+    const {isFetching,error} = useSelector((state)=>state.user);
+    const handleClick=(e)=>{
+        e.preventDefault()
+        login(dispatch,{username,password})
+    }
     return(
         <Container>
              <Wapper>
                 <Title>SING IN</Title>
                 <Form>
-                    <Input placeholder="username" />
-                    <Input placeholder="password" />
-                    <Button>LOGIN</Button>
+                    <Input placeholder="username"
+                    onChange={(e)=>setUserName(e.target.value)} />
+                    <Input placeholder="password"
+                    type="password"
+                    onChange={(e)=>setUserPassword(e.target.value)}/>
+                    <Button onClick={handleClick} disabled={isFetching}>
+                        LOGIN
+                    </Button>
+                    {error && <Error>Somenthing went wrong...</Error>}
                     <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
                     <Link>CREATE A NEW ACCOUNT</Link>
                 </Form>
