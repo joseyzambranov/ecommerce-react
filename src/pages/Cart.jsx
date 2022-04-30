@@ -11,6 +11,8 @@ import {useState} from "react";
 import { useEffect } from 'react';
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from "react-redux"
+import {sumProduct} from "../redux/cartRedux"
 
 const KEY = process.env.REACT_APP_STRIPE
 
@@ -165,12 +167,17 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const dispatch = useDispatch()
   const cart = useSelector(state=>state.cart);
   const [stripeToken,setStripeToken] = useState(null);
+
+
   const history = useNavigate()
   const onToken = (token)=>{
     setStripeToken(token)
   }
+
+
   useEffect(()=>{
     const makeRequest = async ()=>{
       try{
@@ -187,6 +194,9 @@ const Cart = () => {
     }
     stripeToken && makeRequest()
   },[stripeToken,cart.total,history])
+  
+console.log(cart)
+
   return (
     <Container>
       <Navbar />
@@ -222,9 +232,9 @@ const Cart = () => {
             </ProductDetail>
             <PriceDetail>
               <ProductAmountContainer>
-                <Add />
+                <Add onClick = {()=>dispatch(sumProduct(product._id))} />
                 <ProductAmount>{product.quantity}</ProductAmount>
-                <Remove />
+                <Remove/>
               </ProductAmountContainer>
               <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
             </PriceDetail>
