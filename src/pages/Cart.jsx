@@ -209,7 +209,7 @@ console.log(cart)
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton onClick = {()=>dispatch(sumProduct())}>EMPTY CART</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -228,14 +228,12 @@ console.log(cart)
                 <ProductSize>
                   <b>Size:</b> {product.size}
                 </ProductSize>
+                <ProductSize>
+                  <b>Quantity:</b> {product.quantity}
+                </ProductSize>
               </Details>
             </ProductDetail>
             <PriceDetail>
-              <ProductAmountContainer>
-                <Add onClick = {()=>dispatch(sumProduct(product._id))} />
-                <ProductAmount>{product.quantity}</ProductAmount>
-                <Remove/>
-              </ProductAmountContainer>
               <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
             </PriceDetail>
           </Product>

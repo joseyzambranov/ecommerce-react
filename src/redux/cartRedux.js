@@ -13,15 +13,22 @@ const cartSlice = createSlice({
             state.products.push(action.payload);
             state.total += action.payload.price*action.payload.quantity;
         },
-        sumProduct:(state,action)=>{
+        /*sumProduct:(state,action)=>{
             state.quantity -= 1;
             state.products.splice(
                 
-                state.products.findIndex((item)=>item._id===action.payload),1);
-                state.total += action.payload.price?action.payload.price*action.payload.quantity:0;
+                state.products.findIndex((item)=>item._id===action.payload.quantity),1);
+                state.total += state.products.price?state.products.price*action.payload.quantity:0;
                 
             //state.products[state.products.findIndex((item)=>item._id===action.payload.id)]=action.payload.cart;
-        }
+        }*/
+        sumProduct:(state)=>{
+            
+            state.quantity = 0;
+            state.products = [];
+            state.total = 0;
+            //state.products[state.products.findIndex((item)=>item._id===action.payload.id)]=action.payload.cart;
+            }
     },
 });
 
