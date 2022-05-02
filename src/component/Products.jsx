@@ -59,8 +59,8 @@ if(sort==="newest"){
     return(
         <Container>
             {cat 
-            ? filterPoduct.map((pdt)=>(<Product pdt={pdt} key={pdt.id} />))
-            : product.slice(0,8).map((pdt)=>(<Product pdt={pdt} key={pdt.id} />))}
+            ? filterPoduct.map((pdt)=>(<Product pdt={pdt} key={pdt._id} />))
+            : product.slice(0,8).map((pdt)=>(<Product pdt={pdt} key={pdt._id} />))}
         </Container>
     )
 }

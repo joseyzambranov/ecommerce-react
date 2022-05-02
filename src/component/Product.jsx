@@ -65,7 +65,7 @@ position:absolute;
 
 const Product = ({pdt})=>{
     return(
-        <Container>
+        <Container key={pdt._id} >
             <Circle />
             <Img src={pdt.img} />
             <Info>
