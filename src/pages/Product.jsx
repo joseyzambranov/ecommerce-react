@@ -115,7 +115,7 @@ const Product = ()=>{
     useEffect(()=>{
        const getProduct = async ()=>{
         try{
-            const res = await publicRequest.get("/product/find/"+id)
+            const res = await publicRequest.get("product/find/"+id)
             setProduct(res.data)
         }catch{}
        }
@@ -133,6 +133,7 @@ const Product = ()=>{
     
        
    }
+   console.log(id)
     return(
         <Container>
             <Navbar />
