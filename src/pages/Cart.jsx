@@ -186,7 +186,7 @@ const Cart = () => {
           amount:500,
           
         })
-        history("/success",{state:{
+        history("/ecommerce-react/success",{state:{
                                     stripeData:res.data,
                                     products:cart,
                                   }})
