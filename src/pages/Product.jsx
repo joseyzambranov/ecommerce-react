@@ -105,7 +105,7 @@ font-weight: 500;
 
 const Product = ()=>{
     const location = useLocation()
-    const id = location.pathname.split("/")[2]
+    const id = location.pathname.split("/")[3]
     const [product,setProduct] = useState({})
     const [quantity,setQuantity] = useState(1)
     const [color,setColor] = useState("")
