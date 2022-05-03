@@ -37,7 +37,7 @@ const Option = styled.option`
 
 const ProductList = ()=>{
     const location = useLocation()
-    const cat = location.pathname.split("/ecommerce-react")[2]
+    const cat = location.pathname.split("/")[3]
     const [filters,setfilters] = useState({})
     const [sort,setSort] = useState("newest")
     const handleFilter = (e)=>{
@@ -47,8 +47,8 @@ const ProductList = ()=>{
             [e.target.name]:value
         })
     }
-   
-    
+    console.log(`${location}<----location`)
+    console.log(`${cat}<----cat`)
     return(
         <Container>
             <Navbar />
