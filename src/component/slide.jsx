@@ -110,7 +110,7 @@ const Slide =()=>{
                         <InfoContainer>
                         <Title>{data.title}</Title>
                         <Desc>{data.desc}</Desc>
-                        <Link to="/products">
+                        <Link to="/ecommerce-react/products">
                         <Button>Buy now</Button>
                         </Link>
                         

@@ -47,7 +47,7 @@ color:white;
 const CategoriItem =({ ctg })=>{
 return (
 <Container>
-    <Link to={`/products/${ctg.cat}`}>
+    <Link to={`/ecommerce-react/products/${ctg.cat}`}>
     <Img src={ctg.img} />
     <Info>
         <Title>{ctg.title}</Title>

@@ -181,12 +181,12 @@ const Cart = () => {
   useEffect(()=>{
     const makeRequest = async ()=>{
       try{
-        const res = await userRequest.post("/checkout/payment",{
+        const res = await userRequest.post("/ecommerce-react/checkout/payment",{
           tokenId:stripeToken.id,
           amount:500,
           
         })
-        history("/success",{state:{
+        history("/ecommerce-react/success",{state:{
                                     stripeData:res.data,
                                     products:cart,
                                   }})

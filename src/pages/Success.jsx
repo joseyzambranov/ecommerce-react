@@ -42,7 +42,7 @@ const Success = () => {
     >
     {orderId ? `Order has been created successfully. Your order number is ${orderId}`
              : `SuccessFull. Your order is being prepared...`}
-             <Link to="/">
+             <Link to="/ecommerce-react">
 
              <button style={{
                  padding:10,

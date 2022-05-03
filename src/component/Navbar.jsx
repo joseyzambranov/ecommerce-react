@@ -91,7 +91,7 @@ const Navbar = ()=>{
             </ContentLeft>
          </Left>
              <Center>
-                 <Link  to="/">
+                 <Link  to="/ecommerce-react">
                  <Logo>SUMER SHOP</Logo>
                  </Link>
                  
@@ -103,18 +103,18 @@ const Navbar = ()=>{
             <ContentItemRight onClick={handleClick}>LOGOUT</ContentItemRight>
              
             </>:<>
-            <Link to="/login">
+            <Link to="/ecommerce-react/login">
             <ContentItemRight>LOGIN</ContentItemRight>
             </Link> 
              
 
-             <Link to="/register">
+             <Link to="/ecommerce-react/register">
             <ContentItemRight>REGISTER</ContentItemRight> 
              </Link>
             </>}
             
             
-            <Link to="/cart">
+            <Link to="/ecommerce-react/cart">
             <ContentItemRight>
             <Badge badgeContent={quantity} color="primary">
                  <LocalGroceryStoreOutlinedIcon color="action" />

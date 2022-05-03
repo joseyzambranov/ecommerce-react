@@ -73,7 +73,7 @@ const Product = ({pdt})=>{
                 <ShoppingCartOutlinedIcon />
                 </Icon>
                 <Icon>
-                <Link to ={`/product/${pdt._id}`}>
+                <Link to ={`/ecommerce-react/product/${pdt._id}`}>
                 <SearchOutlinedIcon />
                 </Link>
                 </Icon>
