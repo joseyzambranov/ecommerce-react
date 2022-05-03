@@ -195,7 +195,6 @@ const Cart = () => {
     stripeToken && makeRequest()
   },[stripeToken,cart.total,history])
   
-console.log(cart)
 
   return (
     <Container>
